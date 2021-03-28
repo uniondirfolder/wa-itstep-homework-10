@@ -1,0 +1,22 @@
+﻿@{ 
+    Layout = null;
+}
+@addTagHelper *, Microsoft.AppNetCore.Mvc.TagHelpers
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Conference Registration - Welcome!</title>
+    </head>
+    <body>
+        <h1>Time is  @ViewBag.Time</h1>
+
+        <div>
+            <p>.NET-2021 conference will be held in April Chernivtsy</p>
+            <a asp-action="Register">Register now!</a>
+        </div>
+    </body>
+</html>

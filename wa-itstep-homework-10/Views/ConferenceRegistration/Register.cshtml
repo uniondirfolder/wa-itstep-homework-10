@@ -1,0 +1,35 @@
+﻿@addTagHelper *, Microsoft.AppNetCore.Mvc.TagHelpers
+
+@model wa_itstep_homework_10.Models.Participant
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <h1>Time is  @ViewBag.Time</h1>
+
+    <form asp-action="Register" method="post">
+        <p>
+            <label asp-for="Name :">Your name:</label>
+            <input asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="Email :">Your name:</label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label>Are you speaker?</label>
+            <select asp-for="Speaker">
+                <option value="">Choose an option</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </p>
+        <button type="submit">Register!</button>
+    </form>
+</body>
+</html>
