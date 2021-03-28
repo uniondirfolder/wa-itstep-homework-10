@@ -1,0 +1,23 @@
+﻿@model wa_itstep_homework_10.Models.Participant
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks!</title>
+</head>
+<body>
+    
+        <p>
+            <h1>Thank you,  @Model.Name</h1>
+        </p>
+        <p>
+            @if (Model.Sreaker == true) 
+            {
+                @:Please don't forget to submit your article!
+            }
+        </p>
+
+</body>
+</html>

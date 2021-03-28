@@ -1,0 +1,34 @@
+﻿@model IEnumerable<wa_itstep_homework_10.Models.Participant>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List Participants</title>
+</head>
+<body>
+
+    <h2>List of conference participants:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Is speaker</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (wa_itstep_homework_10.Models.Participant p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Email</td>
+                    <td>@p.Sreaker == true ? "Yes" : "No"</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -13,6 +13,8 @@
     <h1>Time is  @ViewBag.Time</h1>
 
     <form asp-action="Register" method="post">
+        <div asp-validation-summary="All"></div>
+
         <p>
             <label asp-for="Name :">Your name:</label>
             <input asp-for="Name" />
@@ -29,7 +31,9 @@
                 <option value="false">No</option>
             </select>
         </p>
+
         <button type="submit">Register!</button>
+
     </form>
 </body>
 </html>

@@ -15,14 +15,22 @@ namespace wa_itstep_homework_10.Controllers
             return View("Index");
         }
 
+        [HttpGet]
         public IActionResult Register() => View();
 
         [HttpPost]
         public IActionResult Register(Participant participant)
         {
-            //TODO: Do something with registration info
+            // 'Model binding' inside asp core...
+            if (ModelState.IsValid)
+            {
+                Repository.AddParticipant(participant);
+                return View("Thanks", participant);
+            }
             return View();
         }
+
+        public IActionResult ListParticipant() => View(Repository.Participants);
         
     }
 }
