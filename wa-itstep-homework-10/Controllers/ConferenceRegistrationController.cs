@@ -9,11 +9,7 @@ namespace wa_itstep_homework_10.Controllers
 {
     public class ConferenceRegistrationController : Controller
     {
-        public IActionResult Index()
-        {
-            ViewBag.Time = DateTime.Now;
-            return View("Index");
-        }
+        public IActionResult Index() => View("Index");
 
         [HttpGet]
         public IActionResult Register() => View();
@@ -24,13 +20,19 @@ namespace wa_itstep_homework_10.Controllers
             // 'Model binding' inside asp core...
             if (ModelState.IsValid)
             {
-                Repository.AddParticipant(participant);
+                using Repository repository = new();
+                repository.Participants.Add(participant);
+                repository.SaveChanges();
                 return View("Thanks", participant);
             }
             return View();
         }
 
-        public IActionResult ListParticipant() => View(Repository.Participants);
+        public IActionResult ListParticipant()
+        {
+            using Repository repository = new();
+            return View(repository.Participants.ToList());
+        }
         
     }
 }

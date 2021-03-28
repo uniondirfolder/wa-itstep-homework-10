@@ -12,6 +12,7 @@ namespace wa_itstep_homework_10.Models
         public string Name { get; set; }
         [Required(ErrorMessage = "Please enter your email")]
         [RegularExpression(".+\\@\\+..+",ErrorMessage = "Please enter a valid email address")]
+        [Key]
         public string Email { get; set; }
         [Required(ErrorMessage ="Please specify whether you'll be a speaker or just attending")]
         public bool? Sreaker { get; set; }
